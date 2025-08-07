@@ -120,7 +120,7 @@ public class VehicleService {
             throw new IllegalArgumentException("Vehicle number cannot be empty");
         }
 
-        if (vehicle.getType() == VehicleType.DIESEL_ELECTRIC_TRAIN && vehicle.getMaxPassengers() < 100) {
+        if (vehicle.getType() == VehicleType.TRAIN && vehicle.getMaxPassengers() < 100) {
             throw new IllegalArgumentException("Trains must have capacity for at least 100 passengers");
         }
 
@@ -149,6 +149,6 @@ public class VehicleService {
         return String.format("%s (%.2f %s/km)",
                 vehicle.getType().getDefaultFuelType(),
                 vehicle.getConsumptionRate(),
-                vehicle.getType() == VehicleType.DIESEL_ELECTRIC_TRAIN ? "L" : "kWh");
+                vehicle.getType() == VehicleType.TRAIN ? "L" : "kWh");
     }
 }

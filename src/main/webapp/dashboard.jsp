@@ -74,6 +74,12 @@
         <li><a href="MaintenanceController?action=list">Maintenance</a></li>
         <li><a href="RouteController?action=list">Routes</a></li>
         <li><a href="UserController?action=list">Users</a></li>
+        
+        <li><a href="current-location.jsp">Get Current Location</a></li>
+        <li><a href="location-history.jsp">Get Location History</a></li>
+        <li><a href="vehicle-map.jsp">View Active Vehicle Locations</a></li>
+        <li><a href="location-form.jsp">Update Vehicle Location</a></li>
+        
         <li><a href="logout.jsp" class="logout-link">Logout</a></li>
     </ul>
 </body>

@@ -18,22 +18,18 @@ public enum VehicleType {
     /**
      * Represents a bus powered by diesel.
      */
-    DIESEL_BUS("Diesel"),
+    BUS("Diesel"),
 
-    /**
-     * Represents another variant of a bus powered by CNG (Compressed Natural Gas).
-     */
-    CNG_BUS("CNG"),
     
     /**
      * Represents an electric-light rail powered by electricity.
      */
-    ELECTRIC_LIGHT_RAIL("Electric"),
+    LIGHTRAIL("Electric"),
 
     /**
      * Represents a diesel-electric train powered by electricity.
      */
-    DIESEL_ELECTRIC_TRAIN("Electric");
+    TRAIN("Electric");
 
     /**
      * The default fuel type associated with the vehicle type.

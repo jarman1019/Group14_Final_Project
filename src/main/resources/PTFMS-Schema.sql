@@ -50,6 +50,15 @@ CREATE TABLE UserVehicle (
     FOREIGN KEY (vehicle_id) REFERENCES Vehicle(vehicle_id)
 );
 
+CREATE TABLE Location (
+    location_id INT AUTO_INCREMENT PRIMARY KEY,
+    vehicle_id INT NOT NULL,
+    latitude DECIMAL(10, 8) NOT NULL,
+    longitude DECIMAL(11, 8) NOT NULL,
+    timestamp DATETIME NOT NULL,
+    FOREIGN KEY (vehicle_id) REFERENCES Vehicle(vehicle_id)
+);
+
 -- Add necessary ALTER statements for cascading behavior
 
 -- Update the Maintenance table to use ON DELETE CASCADE

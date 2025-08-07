@@ -49,6 +49,18 @@
         <servlet-name>RouteController</servlet-name>
         <url-pattern>/RouteController</url-pattern>
     </servlet-mapping>
+    
+    <!-- LocationController Servlet -->
+    
+    <servlet>
+        <servlet-name>LocationController</servlet-name>
+        <servlet-class>controller.LocationController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LocationController</servlet-name>
+        <url-pattern>/location</url-pattern>
+    </servlet-mapping>
 
     <!-- Welcome file -->
     <welcome-file-list>

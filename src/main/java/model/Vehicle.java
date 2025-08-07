@@ -241,7 +241,7 @@ public class Vehicle {
          */
         private void validate() {
             // Validate train capacity
-            if (type == VehicleType.DIESEL_ELECTRIC_TRAIN && maxPassengers < 100) {
+            if (type == VehicleType.TRAIN && maxPassengers < 100) {
                 throw new IllegalStateException("Trains must have capacity ≥ 100");
             }
 
