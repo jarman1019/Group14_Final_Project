@@ -128,6 +128,7 @@
         <li><a href="vehicle-map.jsp">View Active Vehicle Locations</a></li>
         <li><a href="location-form.jsp">Update Vehicle Location</a></li>
         <li><a href="breaklog-form.jsp">Add Break</a></li>
+        <li><a href="reports.jsp">Reports</a></li>
         <li><a href="logout.jsp" class="logout-link">Logout</a></li>
     </ul>
 </body>
