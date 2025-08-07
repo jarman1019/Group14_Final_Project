@@ -66,7 +66,6 @@
                     <td>
                         <a href="RouteController?action=edit&routeId=${route.routeId}" class="btn">Edit</a> |
                         <a href="RouteController?action=delete&routeId=${route.routeId}" onclick="return confirm('Are you sure you want to delete?');" class="btn">Delete</a> |
-                        <a href="RouteController?action=view&routeId=${route.routeId}" class="btn">View</a> |
                         <a href="RouteController?action=routeDescription&routeId=${route.routeId}" class="btn">Route Description</a>
                     </td>
                 </tr>

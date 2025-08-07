@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,6 +37,7 @@ public class RouteController extends HttpServlet {
      * @throws ServletException If there is an issue with the servlet or database access.
      * @throws IOException      If an I/O error occurs during request processing.
      */
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
 
@@ -55,9 +55,6 @@ public class RouteController extends HttpServlet {
                     break;
                 case "delete":
                     deleteRoute(request, response);
-                    break;
-                case "view":
-                    viewRoute(request, response);
                     break;
                 case "routeDescription": // Handle route description view
                     viewRouteDescription(request, response);
@@ -78,6 +75,7 @@ public class RouteController extends HttpServlet {
      * @throws ServletException If there is an issue handling the route record.
      * @throws IOException      If an I/O error occurs during redirection.
      */
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
 
@@ -181,20 +179,6 @@ public class RouteController extends HttpServlet {
         response.sendRedirect("RouteController?action=list");
     }
 
-    /**
-     * Displays detailed information about a specific route.
-     * @param request  The HTTP request object.
-     * @param response The HTTP response object.
-     * @throws SQLException       If a database access error occurs.
-     * @throws ServletException   If there is an issue forwarding the request.
-     * @throws IOException        If an I/O error occurs during request processing.
-     */
-    private void viewRoute(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        int routeId = Integer.parseInt(request.getParameter("routeId"));
-        Route route = routeService.getRouteById(routeId);
-        request.setAttribute("route", route);
-        request.getRequestDispatcher("route-view.jsp").forward(request, response);
-    }
 
     /**
      * Displays the description of a specific route.
