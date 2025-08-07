@@ -70,6 +70,27 @@
         td a:last-child:hover {
             background-color: #e53935;
         }
+                    #back {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: #007BFF;
+                font-size: 16px;
+                margin-top: 20px;
+            }
+            #back {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 15px;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+            #back:hover {
+                background-color: #45a049;
+            }
+            #back:hover {
+                text-decoration: underline;
+            }
     </style>
 </head>
 <body>
@@ -110,5 +131,6 @@
             }
         %>
     </table>
+    <a href="dashboard.jsp" class="btn" id="back">Go to Homepage</a>
 </body>
 </html>

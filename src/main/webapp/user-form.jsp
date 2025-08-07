@@ -92,9 +92,6 @@
                 <select name="userType" id="userType">
                     <option value="Manager" ${user.userType == 'Manager' ? 'selected' : ''}>Manager</option>
                     <option value="Operator" ${user.userType == 'Operator' ? 'selected' : ''}>Operator</option>
-                    <option value="Passenger" ${user.userType == 'Passenger' ? 'selected' : ''}>Passenger</option>
-                    <option value="Driver" ${user.userType == 'Driver' ? 'selected' : ''}>Driver</option>
-                    <option value="Admin" ${user.userType == 'Admin' ? 'selected' : ''}>Admin</option>
                 </select>
             </div>
 
