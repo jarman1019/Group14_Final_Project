@@ -50,6 +50,7 @@ CREATE TABLE UserVehicle (
     FOREIGN KEY (vehicle_id) REFERENCES Vehicle(vehicle_id)
 );
 
+-- Location table
 CREATE TABLE Location (
     location_id INT AUTO_INCREMENT PRIMARY KEY,
     vehicle_id INT NOT NULL,
@@ -58,6 +59,17 @@ CREATE TABLE Location (
     timestamp DATETIME NOT NULL,
     FOREIGN KEY (vehicle_id) REFERENCES Vehicle(vehicle_id)
 );
+
+-- Break log table
+CREATE TABLE BreakLog (
+    break_id INT AUTO_INCREMENT PRIMARY KEY,
+    operator_id INT NOT NULL,
+    reason VARCHAR(255) NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    FOREIGN KEY (operator_id) REFERENCES Operator(operator_id)
+);
+
+
 
 -- Add necessary ALTER statements for cascading behavior
 
