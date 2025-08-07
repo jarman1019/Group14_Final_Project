@@ -5,7 +5,8 @@
  * Assignment: Final Project
  * Date: Aug 7, 2025
  * Professor: Marwan Farah
- * Purpose: Servlet to manage break log HTTP requests.
+ * Purpose: Servlet to manage break log HTTP requests, including listing break logs
+ *          and creating new break log entries via form submission.
  */
 
 package controller;
@@ -21,17 +22,41 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Servlet controller that handles HTTP requests related to break logs.
+ * Supports listing all break logs and adding new break logs.
+ * Delegates business logic to the BreakLogService.
+ * 
+ * @author Jarmanjit Singh
+ * @since 21
+ * @version 1.0
+ */
 public class BreakLogController extends HttpServlet {
 
+    /** Service layer for break log operations */
     private BreakLogService breakLogService;
 
+    /** Date formatter for parsing and formatting timestamps */
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    /**
+     * Initializes the servlet and its dependencies.
+     */
     @Override
     public void init() {
         breakLogService = new BreakLogService(new BreakLogDAO());
     }
 
+    /**
+     * Handles HTTP GET requests.
+     * If action parameter equals "list", forwards to breaklog-list.jsp with all break logs.
+     * Otherwise, forwards to breaklog-form.jsp for creating new break logs.
+     *
+     * @param request  HttpServletRequest object
+     * @param response HttpServletResponse object
+     * @throws ServletException if servlet error occurs
+     * @throws IOException      if I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
@@ -47,6 +72,16 @@ public class BreakLogController extends HttpServlet {
         }
     }
 
+    /**
+     * Handles HTTP POST requests.
+     * Parses form data to create and save a new BreakLog record,
+     * then redirects to the break log listing page.
+     *
+     * @param request  HttpServletRequest object
+     * @param response HttpServletResponse object
+     * @throws ServletException if servlet error occurs
+     * @throws IOException      if I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {

@@ -39,7 +39,7 @@ INSERT INTO Location (vehicle_id, latitude, longitude, timestamp) VALUES
 ('3', 34.0522, -118.2437, '2025-08-07 14:40:00');
 
 -- Insert into Break log table
-INSERT INTO break_log (operator_id, reason, timestamp) VALUES
+INSERT INTO breaklog (operator_id, reason, timestamp) VALUES
 (101, 'Lunch break', '2025-08-07 12:00:00'),
 (102, 'Medical break', '2025-08-07 13:15:00'),
 (103, 'Technical issue', '2025-08-07 14:45:00');

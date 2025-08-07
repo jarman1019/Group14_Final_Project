@@ -61,6 +61,17 @@
         <servlet-name>LocationController</servlet-name>
         <url-pattern>/location</url-pattern>
     </servlet-mapping>
+    
+        <!-- BreakLogController Servlet -->
+<servlet>
+    <servlet-name>BreakLogController</servlet-name>
+    <servlet-class>controller.BreakLogController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>BreakLogController</servlet-name>
+    <url-pattern>/breaklog</url-pattern>
+</servlet-mapping>
 
     <!-- Welcome file -->
     <welcome-file-list>

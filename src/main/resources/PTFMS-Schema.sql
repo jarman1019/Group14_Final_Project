@@ -65,8 +65,7 @@ CREATE TABLE BreakLog (
     break_id INT AUTO_INCREMENT PRIMARY KEY,
     operator_id INT NOT NULL,
     reason VARCHAR(255) NOT NULL,
-    timestamp TIMESTAMP NOT NULL,
-    FOREIGN KEY (operator_id) REFERENCES Operator(operator_id)
+    timestamp TIMESTAMP NOT NULL
 );
 
 
